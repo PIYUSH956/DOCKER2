@@ -5,5 +5,8 @@ services:
 before_install:
  - docker build -t piyush/docker-react  -f Dockerfile.dev .
 
- 
+script:
+ - docker run piyush/docker-react npm run test -- --coverage
+
+
 
