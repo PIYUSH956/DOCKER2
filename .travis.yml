@@ -15,5 +15,16 @@ before_install:
 script:
  - docker run piyush/docker-react npm run test -- --coverage
 
+deploy:
+ provider: elasticbeanstalk
+ region: "eu-north-1"
+ app: "Docker"
+ env: "Docker-env"
+ bucket_name: "elasticbeanstalk-eu-north-1-911167899687"
+ bucket_path: "Docker"
+ on:
+   branch: main
+ access_key_id: $AWS
+ secret_access_key: $KEY
 
 
